@@ -1,0 +1,20 @@
+@(requestForm: Form[Request])
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Request form") {
+<h1>Request form</h1>
+@helper.form(action = routes.Requests.save()) {
+<fieldset>
+    <legend>Request (@requestForm("lastName").valueOr("New"))</legend>
+    @helper.inputText(requestForm("lastName"), '_label -> "Last Name")
+    @helper.inputText(requestForm("firstName"), '_label -> "First Name")
+    @helper.inputText(requestForm("gid"), '_label -> "GID")
+    @helper.inputText(requestForm("lte"), '_label -> "LTE")
+    @helper.inputText(requestForm("reasonForReplacement"), '_label -> "Reason for Replacement")
+</fieldset>
+<input type="submit" class="btn btn-primary" value="Save">
+<input type="button" class="btn btn-primary" value="Send to Vendor">
+<input type="button" class="btn btn-primary" value="Hold">
+}
+}

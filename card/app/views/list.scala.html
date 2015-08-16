@@ -1,0 +1,75 @@
+@(requests: List[Request])
+
+        @main("Requests") {
+           <div id="pending">
+            <h2>Pending Requests</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>GID</th>
+                    <th>Reason for Replacement</th>
+                </tr>
+                </thead>
+                <tbody>
+                    @for(request <- requests) {
+                        <tr>
+                            <td><a href="@routes.Requests.details(request.gid)">@request.lastName</a> </td>
+                            <td><a href="@routes.Requests.details(request.gid)">@request.firstName</a> </td>
+                            <td><a href="@routes.Requests.details(request.gid)">@request.gid</a> </td>
+                            <td><a href="@routes.Requests.details(request.gid)">@request.reasonForReplacement</a> </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+           </div>
+
+            <div id="vendor">
+                <h2>Vendor Requests</h2>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>GID</th>
+                        <th>Reason for Replacement</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @for(request <- requests) {
+                    <tr>
+                        <td><a href="@routes.Requests.details(request.gid)">@request.lastName</a> </td>
+                        <td><a href="@routes.Requests.details(request.gid)">@request.firstName</a> </td>
+                        <td><a href="@routes.Requests.details(request.gid)">@request.gid</a> </td>
+                        <td><a href="@routes.Requests.details(request.gid)">@request.reasonForReplacement</a> </td>
+                    </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+<h2>Completed Requests</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>GID</th>
+        <th>Reason for Replacement</th>
+    </tr>
+    </thead>
+    <tbody>
+    @for(request <- requests) {
+    <tr>
+        <td><a href="@routes.Requests.details(request.gid)">@request.lastName</a> </td>
+        <td><a href="@routes.Requests.details(request.gid)">@request.firstName</a> </td>
+        <td><a href="@routes.Requests.details(request.gid)">@request.gid</a> </td>
+        <td><a href="@routes.Requests.details(request.gid)">@request.reasonForReplacement</a> </td>
+    </tr>
+    }
+    </tbody>
+</table>
+            <div id="completed">
+
+            </div>
+        }
